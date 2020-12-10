@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- link fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- link al css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- vue.js  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>todolist Vue</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- vue.js area -->
+      <div id="todo-list">
+          <input  v-model="newNote" placeholder="aggiungi memo" >
+          <button @click="addNewNote">Aggiungi</button>
+        <ul>
+          <!-- ciclo dentro il mio array di notes obj con v-for inserendo il template -->
+          <!-- con remove comunico index e quantità da cancellare -->
+          <li
+            is="todo-note"
+            v-for="(obj, index) in notes"
+            v-bind:i="obj.i"
+            v-bind:note="obj.note"
+            v-on:remove="notes.splice(index, 1)"
+          ></li>
+        </ul>
+      </div>
+
+
+      <script src="js/script.js" charset="utf-8"></script>
+    </div>
+
+  </body>
+</html>
