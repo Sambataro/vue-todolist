@@ -15,14 +15,18 @@
   <body>
     <div class="container">
       <div class="logo">
-        <img src="https://www.ninjamarketing.it/wp-content/uploads/2013/06/moleskine_ecco_il_restyling_del_logo_in_un_nuovo_monogramma_1.gif" alt="">
+        <img src="https://www.ninjamarketing.it/wp-content/uploads/2013/06/moleskine_ecco_il_restyling_del_logo_in_un_nuovo_monogramma_1.gif" alt="logo moleskine">
 
       </div>
       <!-- vue.js area -->
       <div id="todo-list">
-          <h1>Moleskine Todo List</h1>
-          <input  v-model="newNote" placeholder="La tua nota...." >
-          <button class="send" @click="addNewNote">Aggiungi</button>
+        <h1>Moleskine Todo List</h1>
+        <!-- utilizzo v-on:submit.prevent per non fare inviare dati al form ma caricare il mio template -->
+        <form v-on:submit.prevent="addNewNote">
+          <input  v-model="newNote" placeholder="La tua nota...." minlength="5" required >
+          <button class="send">Aggiungi</button>
+        </form>
+
         <ul>
           <!-- ciclo dentro il mio array di notes obj con v-for inserendo il template -->
           <!-- con remove comunico index e quantità da cancellare -->
