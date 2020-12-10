@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <!-- link fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <!-- link al css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- vue.js  -->
@@ -12,10 +14,15 @@
   </head>
   <body>
     <div class="container">
+      <div class="logo">
+        <img src="https://www.ninjamarketing.it/wp-content/uploads/2013/06/moleskine_ecco_il_restyling_del_logo_in_un_nuovo_monogramma_1.gif" alt="">
+
+      </div>
       <!-- vue.js area -->
       <div id="todo-list">
-          <input  v-model="newNote" placeholder="aggiungi memo" >
-          <button @click="addNewNote">Aggiungi</button>
+          <h1>Moleskine Todo List</h1>
+          <input  v-model="newNote" placeholder="La tua nota...." >
+          <button class="send" @click="addNewNote">Aggiungi</button>
         <ul>
           <!-- ciclo dentro il mio array di notes obj con v-for inserendo il template -->
           <!-- con remove comunico index e quantità da cancellare -->
